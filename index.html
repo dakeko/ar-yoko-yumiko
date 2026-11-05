@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>喋る名刺Yumiko</title>
+    <link rel="preconnect" href="https://aframe.io">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.5/dist/mindar-image-aframe.prod.js"></script>
+    <link rel="stylesheet" href="js/ar-core.css">
+</head>
+
+<body>
+    <script>
+        window.AR_CONFIG = {
+
+            video: 'assets/videos/yumiko_light.mp4',
+
+            // 横向き名刺（91mm × 55mm）
+            width: 1.65,
+            height: 1,
+
+            intro: '～身体根本から<br>一生モノの印象力を手に入れる～<br>せいたいむ　荻原 由美子です！',
+            message: 'カメラを準備しています…<br>準備ができたら名刺をかざしてください',
+
+            links: [
+                { icon: 'assets/images/icon_line.png', url: 'https://line.me/R/ti/p/@597gpurs?oat_content=url&ts=03062247' },
+                { icon: 'assets/images/icon_insta.png', url: 'https://www.instagram.com/yumiko81seitaimu' },
+                { icon: 'assets/images/icon_fb.png', url: 'https://www.facebook.com/ogihara.yumiko' }
+            ],
+
+            debug: false
+
+        };
+    </script>
+    <script src="js/ar-core.js"></script>
+</body>
+
+</html>
