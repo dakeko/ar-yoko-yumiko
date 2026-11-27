@@ -11,6 +11,10 @@
   const links     = cfg.links      || [];
   const arTexts   = cfg.arTexts    || [];
   const showDebug = cfg.debug === true;
+  // 震え（プルプル）を抑える設定。数字を小さくするほど落ち着くが、動かしたときに少し遅れてついてくる
+  // MindAR の初期値は filterMinCF 0.001 / filterBeta 1000
+  const minCF     = cfg.filterMinCF ?? 0.0001;
+  const beta      = cfg.filterBeta  ?? 0.001;
 
   document.body.insertAdjacentHTML('afterbegin', `
     <div id="loading">
@@ -25,7 +29,7 @@
     </div>
     <div id="debug" class="${showDebug ? '' : 'off'}">init</div>
 
-    <a-scene mindar-image="imageTargetSrc: ${targetSrc};"
+    <a-scene mindar-image="imageTargetSrc: ${targetSrc}; filterMinCF: ${minCF}; filterBeta: ${beta};"
              color-space="sRGB"
              renderer="colorManagement:true"
              vr-mode-ui="enabled:false"
